@@ -67,13 +67,13 @@ void getall()
     fout<<"all:";
     for (int i = 0; i < shelll.size(); ++i)
     {
-    	fout<<shelll[i]<<" ";
+    	fout<<"bin/"<<shelll[i]<<" ";
     }
     fout<<endl;
     for (int i = 0; i < shelll.size(); ++i)
     {
-    	fout<<shelll[i]<<":src/"<<shelll[i]<<".cpp"<<endl;
-    	fout<<"\t"<<"g++ -o "<<shelll[i]<<" src/"<<shelll[i]<<".cpp"<<endl;
+    	fout<<"bin/"<<shelll[i]<<":src/"<<shelll[i]<<".cpp"<<endl;
+    	fout<<"\t"<<"g++ -o bin/"<<shelll[i]<<" src/"<<shelll[i]<<".cpp"<<endl;
     }
     fout<<"clean:"<<endl<<"\trm *.o";
     fout.close();
@@ -157,7 +157,7 @@ int main()
 	{
 		if(check(shel)==true)                //判断是否错误语句
 		 {
-		 	string cmd="./";
+		 	string cmd="./bin/";
 		 	cmd+=shelall;
 			system(cmd.c_str());
 		 }

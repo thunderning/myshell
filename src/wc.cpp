@@ -16,20 +16,20 @@ int main(int argc, char const *argv[])
 	}
 	if(argv[1]==NULL||argv[2]==NULL) cout<<cout<<&argv[0][2]<<": missing operand "<<endl;
 	struct stat info;
-    stat(argv[i],&info);
-        if(access(argv[i],F_OK)!= 0)  
+    stat(argv[2],&info);
+        if(access(argv[2],F_OK)!= 0)  
             {
-                cout<<&argv[0][2]<<": "<<argv[i]<<": No such file or directory"<<endl;
+                cout<<&argv[0][2]<<": "<<argv[2]<<": No such file or directory"<<endl;
                 return 0;
             }
-        else if(access(argv[i],R_OK)!= 0) 
+        else if(access(argv[2],R_OK)!= 0) 
             {
-                cout<<&argv[0][2]<<": "<<argv[i]<<": Permission denied"<<endl;
+                cout<<&argv[0][2]<<": "<<argv[2]<<": Permission denied"<<endl;
                 return 0;
             }
         else if(S_ISDIR(info.st_mode))
             {
-                cout<<&argv[0][2]<<": "<<argv[i]<<": Is a directory"<<endl;
+                cout<<&argv[0][2]<<": "<<argv[2]<<": Is a directory"<<endl;
                 return 0;
             }
     ifstream fin;
